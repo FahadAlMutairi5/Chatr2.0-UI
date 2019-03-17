@@ -16,21 +16,19 @@ class AuthButton extends Component {
     const { user } = this.props;
     //const user = this.props.user;
     let buttons = (
-      <li className="nav-item">
-        <span onClick={this.props.logout} className="nav-link">
-          <FontAwesomeIcon icon={faSignOutAlt} /> Logout
-        </span>
-      </li>
+      <span onClick={this.props.logout} className="nav-link">
+        <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+      </span>
     );
 
     if (!user) {
       buttons = [
-        <li key="loginButton" className="nav-item">
+        <li key="loginButton">
           <Link to="/login" className="nav-link">
             <FontAwesomeIcon icon={faSignInAlt} /> Login
           </Link>
         </li>,
-        <li key="signupButton" className="nav-item">
+        <li key="signupButton">
           <Link to="/signup" className="nav-link">
             <FontAwesomeIcon icon={faUserPlus} /> Signup
           </Link>
@@ -39,7 +37,7 @@ class AuthButton extends Component {
     }
 
     return (
-      <ul className="navbar-nav ml-auto">
+      <ul className=" ">
         <span className="navbar-text">{user && user.username}</span>
         {buttons}
       </ul>

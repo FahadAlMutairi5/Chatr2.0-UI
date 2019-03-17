@@ -16,7 +16,9 @@ class ChannelNavLink extends Component {
         title={channel.name}
       >
         <NavLink className="nav-link" to={`/channels/${channel.name}`}>
-          <span style={{fontSize: '23px'}}><FontAwesomeIcon icon={faHashtag} /></span>
+          <span style={{ fontSize: "23px" }}>
+            <FontAwesomeIcon icon={faHashtag} />
+          </span>
           <span className="nav-link-text"> {channel.name}</span>
         </NavLink>
       </li>

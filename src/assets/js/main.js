@@ -3,28 +3,24 @@ import "./jquery.easing.min";
 
 const fn = () => {
   // Configure tooltips for collapsed side navigation
-  $('.navbar-sidenav [data-toggle="tooltip"]').tooltip({
+  $(' [data-toggle="tooltip"]').tooltip({
     template:
-      '<div class="tooltip navbar-sidenav-tooltip" role="tooltip" style="pointer-events: none;"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+      '<div class=" " role="tooltip" style="pointer-events: none;"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
   });
   // Toggle the side navigation
   $("#sidenavToggler").click(function(e) {
     e.preventDefault();
-    $("body").toggleClass("sidenav-toggled");
-    $(".navbar-sidenav .nav-link-collapse").addClass("collapsed");
-    $(
-      ".navbar-sidenav .sidenav-second-level, .navbar-sidenav .sidenav-third-level"
-    ).removeClass("show");
+    $("body").toggleClass("");
+    $("").addClass("collapsed");
+    $("").removeClass("show");
   });
   // Force the toggled class to be removed when a collapsible nav link is clicked
-  $(".navbar-sidenav .nav-link-collapse").click(function(e) {
+  $("").click(function(e) {
     e.preventDefault();
-    $("body").removeClass("sidenav-toggled");
+    $("body").removeClass("");
   });
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
-  $(
-    "body.fixed-nav .navbar-sidenav, body.fixed-nav .sidenav-toggler, body.fixed-nav .navbar-collapse"
-  ).on("mousewheel DOMMouseScroll", function(e) {
+  $("").on("mousewheel DOMMouseScroll", function(e) {
     var e0 = e.originalEvent,
       delta = e0.wheelDelta || -e0.detail;
     this.scrollTop += (delta < 0 ? 1 : -1) * 30;
